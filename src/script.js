@@ -290,7 +290,7 @@ const guiOptions = {
     }
 }
 const gui = new GUI()
-// gui.close()
+gui.close()
 
 const planeFolder = gui.addFolder("Plane Mesh").close()
 planeFolder.add(planeMesh.position, 'x', -5, 5, 0.01).name('Position X')
