@@ -17,16 +17,16 @@ const scene = new THREE.Scene()
 const loadingManager = new THREE.LoadingManager()
 
 const textureLoader = new THREE.TextureLoader(loadingManager)
-const doorColorTexture = textureLoader.load("/textures/door/color.jpg")
-const doorAlphaTexture = textureLoader.load("/textures/door/alpha.jpg")
-const doorAmbientOcclusion = textureLoader.load("/textures/door/ambientOcclusion.jpg")
-const doorHeightTexture = textureLoader.load("/textures/door/height.jpg")
-const doorMetalnessTexture = textureLoader.load("/textures/door/metalness.jpg")
-const doorNormalTexture = textureLoader.load("/textures/door/normal.jpg")
-const doorRoughnessTexture = textureLoader.load("/textures/door/roughness.jpg")
+const doorColorTexture = textureLoader.load("/ThreeJSMaterials/textures/door/color.jpg")
+const doorAlphaTexture = textureLoader.load("/ThreeJSMaterials/textures/door/alpha.jpg")
+const doorAmbientOcclusion = textureLoader.load("/ThreeJSMaterials/textures/door/ambientOcclusion.jpg")
+const doorHeightTexture = textureLoader.load("/ThreeJSMaterials/textures/door/height.jpg")
+const doorMetalnessTexture = textureLoader.load("/ThreeJSMaterials/textures/door/metalness.jpg")
+const doorNormalTexture = textureLoader.load("/ThreeJSMaterials/textures/door/normal.jpg")
+const doorRoughnessTexture = textureLoader.load("/ThreeJSMaterials/textures/door/roughness.jpg")
 
-let doorMatCapTexture = textureLoader.load("/textures/matcaps/1.png")
-const gradientTexture = textureLoader.load("/textures/gradients/3.jpg")
+let doorMatCapTexture = textureLoader.load("/ThreeJSMaterials/textures/matcaps/1.png")
+const gradientTexture = textureLoader.load("/ThreeJSMaterials/textures/gradients/3.jpg")
 
 gradientTexture.generateMipmaps = false
 
@@ -42,7 +42,7 @@ const pointLight = new THREE.PointLight(0xffffff, 15)
 pointLight.position.set(-2,3,0)
 scene.add(pointLight)
 
-const envTexture = "/textures/environmentMap/2k.hdr"
+const envTexture = "/ThreeJSMaterials/textures/environmentMap/2k.hdr"
 const rgbELoader = new RGBELoader()
 rgbELoader.load(envTexture, (map) =>{
     console.log("Environment Map Loaded");
@@ -360,7 +360,7 @@ const matCapFolder = materialFolder.addFolder("Matcap Textures")
 
 matCapFolder.add(matCapDirectory, "num").min(1).max(7).step(1).name("Texture").onChange((n) =>{
     matCapDirectory.num = n
-    let matCapURL = `/textures/matcaps/${matCapDirectory.num}.png`
+    let matCapURL = `/ThreeJSMaterials/textures/matcaps/${matCapDirectory.num}.png`
 
     const newMatCapTexture = textureLoader.load(matCapURL)
 
